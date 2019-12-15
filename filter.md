@@ -1,6 +1,8 @@
 [//]: # (The contents of this file were originally extracted from JOSM code and are licensed on GPL terms, see LICENSE for more information)
 
 
+# JOSM Filter Syntax Documentation
+
 ## Basics
 
 | Syntax                         | Description |
