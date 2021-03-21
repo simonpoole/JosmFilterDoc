@@ -13,6 +13,7 @@
 | **-**_key_**:**_valuefragment_ | _valuefragment_ nowhere in _key_ |
 | _key_                          | matches if _key_ exists |
 | _key_**=**_value_              | _key_ with exactly _value_ |
+| _key_**~**_regexp_             | _key_ and value matches _regexp_, supported in JOSM since 16260 |
 | *key*__=*__                    | _key_ with any value |
 | _key_**=**                     | _key_ with empty value |
 | __*=__*value*                  | _value_ in any key |
@@ -62,6 +63,7 @@
 |__role:__*role*               | objects with given role in a relation|
 |__areasize:__*-100*           | closed ways with an area of 100 m^2|
 |__waylength:__*200-*          | ways with a length of 200 m or more|
+|__members:__*range*           | relations with a member count in *range*, supported in JOSM since 16581 |
 
 ## State
 
@@ -92,6 +94,15 @@
 |__allinview__                 | objects (and all its way nodes / relation members) in current view|
 |__indownloadedarea__          | objects in downloaded area|
 |__allindownloadedarea__       | all objects (and all its way nodes / relation members) in downloaded area|
+
+## Overpass query support
+
+| Syntax                       | Description |
+|---                           |--- |
+|__newer__**=**_date_          | undocumented magic value? |
+|_expr_ __in__ _location_      | objects in location |
+|_expr_ __around__ _location_  | objects new location |
+|_expr_ __in bbox__            | objects in current bounding box |
 
 ### Copyright 
 
