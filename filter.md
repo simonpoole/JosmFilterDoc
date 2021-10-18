@@ -7,11 +7,10 @@
 
 | Syntax                         | Description |
 |---                             |--- |
-| Baker Street                   | Baker and Street substrings in any key or value |
-| __"Baker Street"__        | Baker Street in any key or value |
-| _key_**:**_valuefragment_      | _valuefragment_ anywhere in _key_. name:str matches name=Bakerstreet |
+| _substr_                       | matches if _substr_ appears in any **key or value** <br /><br />(e.g. `wa` matches both `natural=water` and `highway=path`) <br /><br /> Whitespace or special characters in the search string ( `:`, `(`, `)`, `\|`, `^`, `=`, `~`, `?`, `<`, `>`, `"` ) need to be escaped by prefixing them with `\` (e.g. `area\:highway`), or the whole string needs to be enclosed in double quotes (e.g. `"area:highway"`). Double quotes that are part of the search string always need to be escaped with `\` (e.g. `"abc:de\"fg"`). |
+| _key_**:**_valuefragment_      | _valuefragment_ anywhere in _key_. `name:str` matches name=Bakerstreet |
 | **-**_key_**:**_valuefragment_ | _valuefragment_ nowhere in _key_ |
-| _key_                          | matches if _key_ exists |
+| _key_**:**                     | matches if exact _key_ exists |
 | _key_**=**_value_              | _key_ with exactly _value_ |
 | _key_**~**_regexp_             | _key_ and value matches _regexp_, supported in JOSM since 16260 |
 | *key*__=*__                    | _key_ with any value |
@@ -25,13 +24,13 @@
 
 | Syntax                         | Description |
 |---                             |--- |
-|_expr_ _expr_                   | logical and (both expressions have to be satisfied), "Baker Street" |
+|_expr_ _expr_                   | logical and (both expressions have to be satisfied), e.g. `Baker Street` = `Baker` and `Street` |
 |_expr_ __&__ _expr_             | logical and (both expressions have to be satisfied)|
-|_expr_ __AND__ _expr_           | logical and (both expressions have to be satisfied)|
+|_expr_ __AND__ _expr_           | logical and (both expressions have to be satisfied) <br /><br />`AND` is case insensitive unlike other functions/properties |
 |_expr_ __&#124;__ _expr_        | logical or (at least one expression has to be satisfied)|
-|_expr_ __OR__ _expr_            | logical or (at least one expression has to be satisfied)|
+|_expr_ __OR__ _expr_            | logical or (at least one expression has to be satisfied)<br /><br />`OR` is case insensitive unlike other functions/properties  |
 |_expr_ __^__ _expr_             | logical xor (one and only one expression has to be satisfied)|
-|_expr_ __XOR__ _expr_           | logical xor (one and only one expression has to be satisfied)|
+|_expr_ __XOR__ _expr_           | logical xor (one and only one expression has to be satisfied)<br /><br />`XOR` is case insensitive unlike other functions/properties  |
 |__-__*expr*                     | logical not|
 |__(__*expr*__)__                | use parenthesis to group expressions |
 
