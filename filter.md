@@ -26,8 +26,12 @@
 | Syntax                         | Description |
 |---                             |--- |
 |_expr_ _expr_                   | logical and (both expressions have to be satisfied), "Baker Street" |
+|_expr_ __&__ _expr_             | logical and (both expressions have to be satisfied)|
+|_expr_ __AND__ _expr_           | logical and (both expressions have to be satisfied)|
 |_expr_ __&#124;__ _expr_        | logical or (at least one expression has to be satisfied)|
 |_expr_ __OR__ _expr_            | logical or (at least one expression has to be satisfied)|
+|_expr_ __^__ _expr_             | logical xor (one and only one expression has to be satisfied)|
+|_expr_ __XOR__ _expr_           | logical xor (one and only one expression has to be satisfied)|
 |__-__*expr*                     | logical not|
 |__(__*expr*__)__                | use parenthesis to group expressions |
 
