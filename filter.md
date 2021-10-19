@@ -11,6 +11,8 @@
 | _key_**:**_valuefragment_      | _valuefragment_ anywhere in _key_. `name:str` matches name=Bakerstreet |
 | **-**_key_**:**_valuefragment_ | _valuefragment_ nowhere in _key_ |
 | _key_**:**                     | matches if exact _key_ exists |
+| _key_                          | matches if _key_ exists |
+| _key_**?**                     | matches if _key_ has a truthy value (`true`, `yes`, `1`, `on`) |
 | _key_**=**_value_              | _key_ with exactly _value_ |
 | _key_**~**_regexp_             | _key_ and value matches _regexp_, supported in JOSM since 16260 |
 | *key*__=*__                    | _key_ with any value |
