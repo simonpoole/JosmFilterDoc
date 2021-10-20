@@ -110,5 +110,5 @@
 
 ### Copyright 
 
-The contents of this file were originally extracted from JOSM code and are licensed on GPL terms, please see [the JOSM website](https://josm.openstreetmap.de/) and the accompanying LICENCE file for more information.
+The contents of this file were originally extracted from JOSM code that displays help on the search modal and are licensed on GPL terms, please see [the JOSM website](https://josm.openstreetmap.de/) and the accompanying LICENCE file for more information.
                  
