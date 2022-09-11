@@ -90,6 +90,31 @@
 |__nth:__*7*                   | n-th member of relation and/or n-th node of way, "nth:5 (child type:relation), nth:-1|
 |__nth%:__*7*                  | every n-th member of relation and/or every n-th node of way, nth%:100 (child waterway)|
 
+### Matching objects in relations
+
+* Match all ways of all reations:
+
+	type:way & child type:relation
+
+* Match all ways of all reations that are multipolygons:
+
+	type:way & child type:relation & child type=multipolygon
+
+* Match all ways with role:outer of all reations:
+
+	type:way & role:outer & child type:relation
+
+* Match all ways with role:outer of a reation with a certain _id_:
+
+	type:way & role:outer & child id:_id_
+
+* Select nodes of ways in a multipoligon.  Multipolygons are relations that have ways as members.
+Nodes in-turn are children of ways which are members of a multipolygon. Consequently the child operator needs be applied recursively to select nodes in a certain relation. 
+Select nodes of ways in relation with id=14297825:
+
+	type:node & child type:way & child child id:14297825
+
+
 ## View
 
 | Syntax                       | Description |
