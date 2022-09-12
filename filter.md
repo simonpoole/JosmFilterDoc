@@ -108,6 +108,16 @@
 |_expr_ __around__ _location_  | objects new location |
 |_expr_ __in bbox__            | objects in current bounding box |
 
+## Examples for matching objects in relations
+
+| Example                                                            | Description |
+|---                           |--- |
+|type:way & child type:relation                                     | Match all ways of all reations |
+| type:way & child type:relation & child type=multipolygon          | Match all ways of all reations that are multipolygons | 
+| type:way & role:outer & child type:relation                       | Match all ways with role:outer of all reations |
+| type:way & role:outer & child id:_id_                             | Match all ways with role:outer of a reation with a certain _id_|
+|type:node & child type:way & child child id:14297825               | Match nodes of ways in the relation with id=14297825 (e.g. a multipolygon). Multipolygons are relations that have ways as members. The nodes in the multipolygon in-turn are children of ways which are members of the multipolygon. Consequently the child operator needs be applied recursively to match them. |
+
 ### Copyright 
 
 The contents of this file were originally extracted from JOSM code that displays help on the search modal and are licensed on GPL terms, please see [the JOSM website](https://josm.openstreetmap.de/) and the accompanying LICENCE file for more information.
